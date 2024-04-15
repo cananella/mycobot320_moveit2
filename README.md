@@ -1,13 +1,12 @@
 # mycobot320_moveit2
 
-ubuntu 22.04
+ubuntu 22.04 
 ros2 humble
   
-[install moveit2](https://moveit.picknik.ai/main/doc/tutorials/getting_started/getting_started.html)
-
+# [install moveit2](https://moveit.picknik.ai/main/doc/tutorials/getting_started/getting_started.html) 
 need to test first
 
-git clone & build
+# git clone & build
 ```
    cd ~/[ros2 workspace dir]/src
    git clone https://github.com/cananella/mycobot320_moveit2.git
@@ -15,20 +14,20 @@ git clone & build
    colcon build --packages-select mycobot_moveit 
 ```
   
-rviz2 moveit control
+# rviz2 moveit control
 ```
 ros launch mycobot_moveit demo.launch.py
-  
 
 ```
-if error occurs [ERROR] [launch]: Caught exception in launch (see debug for traceback): 'capabilities'
+ 
+# if error occurs [ERROR] [launch]: Caught exception in launch (see debug for traceback): 'capabilities'
 ```
 ~/[ros2 workspace dir]/src/moveit2/moveit_configs_utils/moveit_configs_utils/launches.py line:203
 change: default_value=moveit_config.move_group_capabilities["capabilities"],
 -> default_value=moveit_config.move_group_capabilities,
 ```
-
-[control whit code](https://moveit.picknik.ai/main/doc/tutorials/your_first_project/your_first_project.html)
+ 
+# [control whit code](https://moveit.picknik.ai/main/doc/tutorials/your_first_project/your_first_project.html)
 
 ```
 cd ~/[ros2 workspace dir]/src
