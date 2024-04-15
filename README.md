@@ -1,7 +1,7 @@
 # mycobot320_moveit2
 
-ubuntu 22.04 
-ros2 humble
+ ubuntu 22.04 
+ ros2 humble
   
 # [install moveit2](https://moveit.picknik.ai/main/doc/tutorials/getting_started/getting_started.html) 
 need to test first
