@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<robot  xmlns:xacro="http://www.ros.org/wiki/xacro" name="firefighter" >
+	
+<xacro:property name="width" value=".2" />
+
+
+  <link name="base">
+    <visual>
+      <geometry>
+       <mesh filename="base.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+       <mesh filename="base.stl"/>
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+  <link name="link1">
+    <visual>
+      <geometry>
+       <mesh filename="link1.stl"/>
+      </geometry>
+
+    <origin xyz="0.0 0.0 -0.103" rpy="0 0 0"/>
+    </visual>
+    <collision>
+     <geometry>
+       <mesh filename="link1.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.103" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="link2">
+    <visual>
+      <geometry>
+       <mesh filename="link2.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.1739" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+       <mesh filename="link2.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.1739" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="link3">
+    <visual>
+      <geometry>
+       <mesh filename="link3.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.3089" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+       <mesh filename="link3.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.3089" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="link4">
+    <visual>
+      <geometry>
+       <mesh filename="link4.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.4289" rpy="0 0 0"/>
+    </visual>
+    <collision>
+       <geometry>
+       <mesh filename="link4.stl"/>
+      </geometry>
+      <origin xyz="0.0 0.0 -0.4289" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="link5">
+    <visual>
+      <geometry>
+       <mesh filename="link5.stl"/>
+      </geometry>
+      <origin xyz="0.0 -0.088779 -0.475" rpy="0 0 0"/>
+    </visual>
+    <collision>
+      <geometry>
+       <mesh filename="link5.stl"/>
+      </geometry>
+      <origin xyz="0.0 -0.088779 -0.475" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+
+  <link name="link6">
+    <visual>
+      <geometry>
+       <mesh filename="link6.stl"/>
+      </geometry>
+      <origin xyz="0.0 -0.154279 -0.526" rpy="0 0 -1.5707"/>
+    </visual>
+    <collision>
+      <geometry>
+       <mesh filename="link6.stl"/>
+      </geometry>
+      <origin xyz="0.0 -0.154279 -0.526" rpy="0 0 -1.5707"/>
+    </collision>
+  </link>
+
+
+  <joint name="joint2_to_joint1" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-2.87" upper = "2.87" velocity = "0"/>
+    <parent link="base"/>
+    <child link="link1"/>
+    <origin xyz="0.0 0.0 0.103" rpy="0 0 0"/>
+  </joint>
+
+
+  <joint name="joint3_to_joint2" type="revolute">
+    <axis xyz="0 -1 0"/>
+    <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.0709" rpy="0 0 0"/>
+  </joint>
+
+
+  <joint name="joint4_to_joint3" type="revolute">
+    <axis xyz=" 0 1 0"/>
+    <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 0 0.135" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint5_to_joint4" type="revolute">
+    <axis xyz=" 0 -1 0"/>
+    <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0.0 0.0 0.12" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint6_to_joint5" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin xyz="0 0.088779 0.0461" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="joint6output_to_joint6" type="revolute">
+    <axis xyz="0 1 0"/>
+    <limit effort = "1000.0" lower = "-3.05" upper = "3.05" velocity = "0"/>
+    <parent link="link5"/>
+    <child link="link6"/>
+    <origin xyz="0 0.0655 0.051" rpy="0 0 0"/>
+  </joint>
+
+
+</robot>
