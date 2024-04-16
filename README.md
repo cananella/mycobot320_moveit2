@@ -8,10 +8,10 @@ need to test first
 
 # git clone & build
 ```
-   cd ~/[ros2 workspace dir]/src
-   git clone https://github.com/cananella/mycobot320_moveit2.git
-   cd ..
-   colcon build --packages-select mycobot_moveit 
+cd ~/[ros2 workspace dir]/src
+git clone https://github.com/cananella/mycobot320_moveit2.git
+cd ..
+colcon build --packages-select mycobot_moveit 
 ```
   
 # rviz2 moveit control
