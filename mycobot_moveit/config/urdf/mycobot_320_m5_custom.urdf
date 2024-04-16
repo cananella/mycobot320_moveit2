@@ -7,13 +7,13 @@
   <link name="base">
     <visual>
       <geometry>
-       <mesh filename="base.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/base.stl"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="base.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/base.stl"/>
         </geometry>
         <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
@@ -22,14 +22,14 @@
   <link name="link1">
     <visual>
       <geometry>
-       <mesh filename="link1.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link1.stl"/>
       </geometry>
 
     <origin xyz="0.0 0.0 -0.103" rpy="0 0 0"/>
     </visual>
     <collision>
      <geometry>
-       <mesh filename="link1.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link1.stl"/>
       </geometry>
       <origin xyz="0.0 0.0 -0.103" rpy="0 0 0"/>
     </collision>
@@ -39,15 +39,15 @@
   <link name="link2">
     <visual>
       <geometry>
-       <mesh filename="link2.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link2.stl"/>
       </geometry>
-      <origin xyz="0.0 0.0 -0.1739" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.055 -0.1739" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="link2.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link2.stl"/>
       </geometry>
-      <origin xyz="0.0 0.0 -0.1739" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.055 -0.1739" rpy="0 0 0"/>
     </collision>
   </link>
 
@@ -55,15 +55,15 @@
   <link name="link3">
     <visual>
       <geometry>
-       <mesh filename="link3.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link3.stl"/>
       </geometry>
-      <origin xyz="0.0 0.0 -0.3089" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.045 -0.3089" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="link3.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link3.stl"/>
       </geometry>
-      <origin xyz="0.0 0.0 -0.3089" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.045 -0.3089" rpy="0 0 0"/>
     </collision>
   </link>
 
@@ -71,15 +71,15 @@
   <link name="link4">
     <visual>
       <geometry>
-       <mesh filename="link4.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link4.stl"/>
       </geometry>
-      <origin xyz="0.0 0.0 -0.4289" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.045 -0.4289" rpy="0 0 0"/>
     </visual>
     <collision>
        <geometry>
-       <mesh filename="link4.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link4.stl"/>
       </geometry>
-      <origin xyz="0.0 0.0 -0.4289" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.045 -0.4289" rpy="0 0 0"/>
     </collision>
   </link>
 
@@ -87,15 +87,15 @@
   <link name="link5">
     <visual>
       <geometry>
-       <mesh filename="link5.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link5.stl"/>
       </geometry>
-      <origin xyz="0.0 -0.088779 -0.475" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.08878 -0.475" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="link5.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link5.stl"/>
       </geometry>
-      <origin xyz="0.0 -0.088779 -0.475" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.08878 -0.475" rpy="0 0 0"/>
     </collision>
   </link>
 
@@ -103,15 +103,15 @@
   <link name="link6">
     <visual>
       <geometry>
-       <mesh filename="link6.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link6.stl"/>
       </geometry>
-      <origin xyz="0.0 -0.154279 -0.526" rpy="0 0 -1.5707"/>
+      <origin xyz="0.0 -0.13428 -0.524" rpy="0 0 0"/>
     </visual>
     <collision>
       <geometry>
-       <mesh filename="link6.stl"/>
+       <mesh filename="package://mycobot_moveit/config/urdf/link6.stl"/>
       </geometry>
-      <origin xyz="0.0 -0.154279 -0.526" rpy="0 0 -1.5707"/>
+      <origin xyz="0.0 -0.13428 -0.524" rpy="0 0 0"/>
     </collision>
   </link>
 
@@ -130,7 +130,7 @@
     <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
     <parent link="link1"/>
     <child link="link2"/>
-    <origin xyz="0 0 0.0709" rpy="0 0 0"/>
+    <origin xyz="0.0 0.055 0.0709" rpy="0 0 0"/>
   </joint>
 
 
@@ -139,7 +139,7 @@
     <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
     <parent link="link2"/>
     <child link="link3"/>
-    <origin xyz="0 0 0.135" rpy="0 0 0"/>
+    <origin xyz="-0.0 -0.01 0.135" rpy="0 0 0"/>
   </joint>
 
   <joint name="joint5_to_joint4" type="revolute">
@@ -155,7 +155,7 @@
     <limit effort = "1000.0" lower = "-2.879" upper = "2.879" velocity = "0"/>
     <parent link="link4"/>
     <child link="link5"/>
-    <origin xyz="0 0.088779 0.0461" rpy="0 0 0"/>
+    <origin xyz="0.0 0.04378 0.0461" rpy="0 0 0"/>
   </joint>
 
   <joint name="joint6output_to_joint6" type="revolute">
@@ -163,7 +163,7 @@
     <limit effort = "1000.0" lower = "-3.05" upper = "3.05" velocity = "0"/>
     <parent link="link5"/>
     <child link="link6"/>
-    <origin xyz="0 0.0655 0.051" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0455 0.049" rpy="0 0 0"/>
   </joint>
 
 
