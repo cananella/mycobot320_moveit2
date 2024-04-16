@@ -16,11 +16,15 @@ need to test first
   
 # rviz2 moveit control
 ```
-ros launch mycobot_moveit demo.launch.py
+ros2 launch mycobot_moveit demo.launch.py
 
 ```
+# whit gripper
+```
+ros2 launch mycobot_with_gripper demo.launch.py
+```
  
-# if error occurs [ERROR] [launch]: Caught exception in launch (see debug for traceback): 'capabilities'
+### if error occurs [ERROR] [launch]: Caught exception in launch (see debug for traceback): 'capabilities'
 ```
 ~/[ros2 workspace dir]/src/moveit2/moveit_configs_utils/moveit_configs_utils/launches.py line:203
 change: default_value=moveit_config.move_group_capabilities["capabilities"],
