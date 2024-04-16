@@ -17,12 +17,15 @@ need to test first
 # rviz2 moveit control
 ```
 ros2 launch mycobot_moveit demo.launch.py
-
 ```
+![스크린샷 2024-04-15 14-39-02](https://github.com/cananella/mycobot320_moveit2/assets/97207725/513f9e2b-324d-4975-a475-a678b560ddee)
+
 # whit gripper
 ```
 ros2 launch mycobot_with_gripper demo.launch.py
 ```
+![스크린샷 2024-04-16 17-17-56](https://github.com/cananella/mycobot320_moveit2/assets/97207725/d1460766-ea21-4d49-9203-a1ba5bb1340c)
+
  
 ### if error occurs [ERROR] [launch]: Caught exception in launch (see debug for traceback): 'capabilities'
 ```
