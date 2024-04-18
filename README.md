@@ -12,6 +12,31 @@ need to test first
 
 [Source build](https://moveit.ros.org/install-moveit2/source/)   : for creat packages
 
+```bash
+## make ros2 workspace
+mkdir -p ~/[ros2 workspace dir]/src
+sudo apt remove ros-$ROS_DISTRO-moveit*
+
+## git moveit2
+cd ~/[ros2 workspace dir]/src
+sudo apt remove ros-$ROS_DISTRO-moveit*
+git clone -b humble https://github.com/ros-planning/moveit2_tutorials.git
+git clone -b humble https://github.com/ros-planning/moveit2.git
+vcs import < moveit2_tutorials/moveit2_tutorials.repos
+for repo in moveit2/moveit2.repos $(f="moveit2/moveit2_$ROS_DISTRO.repos"; test -r $f && echo $f); do vcs import < "$repo"; done
+rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
+
+
+## colcon build
+cd ~/[ros2 workspace dir]
+colcon build --event-handlers desktop_notification- status- --cmake-args -DCMAKE_BUILD_TYPE=Release
+ ## if build dead, add  --parallel-workers 1
+
+
+
+
+```
+
 # git clone & build
 ```bash
 cd ~/[ros2 workspace dir]/src
