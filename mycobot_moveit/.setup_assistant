@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: mycobot_description
+    relative_path: urdf/mycobot_320_m5_2022/mycobot_320_m5_custom.urdf
+  srdf:
+    relative_path: config/firefighter.srdf
+  package_settings:
+    author_name: cananella
+    author_email: mango7460@naver.com
+    generated_timestamp: 1713150656
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
