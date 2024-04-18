@@ -41,8 +41,10 @@ colcon build --event-handlers desktop_notification- status- --cmake-args -DCMAKE
 ```bash
 cd ~/[ros2 workspace dir]/src
 git clone https://github.com/cananella/mycobot320_moveit2.git
+cp -r mycobot320_moveit2/* ./
+rm -rf mycobot320_moveit2
 cd ..
-colcon build --packages-select mycobot_moveit 
+colcon build --packages-select mycobot_moveit mycobot_with_gripper
 ```
   
 # rviz2 moveit control
