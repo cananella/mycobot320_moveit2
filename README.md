@@ -19,10 +19,7 @@ sudo apt remove ros-$ROS_DISTRO-moveit*
 
 ## git moveit2
 cd ~/[ros2 workspace dir]/src
-sudo apt remove ros-$ROS_DISTRO-moveit*
-git clone -b humble https://github.com/ros-planning/moveit2_tutorials.git
-git clone -b humble https://github.com/ros-planning/moveit2.git
-vcs import < moveit2_tutorials/moveit2_tutorials.repos
+git clone https://github.com/ros-planning/moveit2.git -b main
 for repo in moveit2/moveit2.repos $(f="moveit2/moveit2_$ROS_DISTRO.repos"; test -r $f && echo $f); do vcs import < "$repo"; done
 rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
 
