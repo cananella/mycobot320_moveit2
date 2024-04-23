@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mycobot_ros2_controll</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="mango7460@naver.com">kairos</maintainer>
+  <license>TODO: License declaration</license>
+
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>actionlib</depend>
+  <depend>cv_bridge</depend>
+  <depend>sensor_msgs</depend>
+
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+
+  <exec_depend>join_state_publisher</exec_depend>
+  <exec_depend>join_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>joy</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>python-tk</exec_depend>
+  <exec_depend>mycobot_with_gripper</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
