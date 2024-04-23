@@ -43,7 +43,7 @@ git clone https://github.com/cananella/mycobot320_moveit2.git
 cp -r mycobot320_moveit2/* ./
 rm -rf mycobot320_moveit2 README.md
 cd ..
-colcon build --packages-select mycobot_moveit mycobot_with_gripper mycobot_ros2_controll hellow_moveit
+colcon build --packages-select mycobot_moveit mycobot_with_gripper mycobot_ros2_controll hello_moveit
 ```
   
 # rviz2 moveit control
