@@ -1,0 +1,31 @@
+orange:
+  high_h: 19
+  low_h:  0
+  high_s: 255
+  low_s:  150
+  high_v: 200
+  low_v:  71
+
+blue:
+  high_h: 133
+  low_h:  100
+  high_s: 255
+  low_s:  219
+  high_v: 148
+  low_v:  99
+
+green:
+  high_h: 96
+  low_h:  50
+  high_s: 255
+  low_s:  87
+  high_v: 191
+  low_v:  57
+
+purple:
+  high_h: 147
+  low_h:  128
+  high_s: 160
+  low_s:  118
+  high_v: 120
+  low_v:  75

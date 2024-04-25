@@ -14,7 +14,6 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, "launch"), glob('launch/*.launch.py')),
-
         (os.path.join('share', package_name, "config"), glob('config/*')),
     ],
     install_requires=['setuptools'],
@@ -27,7 +26,9 @@ setup(
     entry_points={
         'console_scripts': [
             'rviz_controll=mycobot_ros2_controll.rviz_controll:main',
-            'cam_pub=mycobot_ros2_controll.camera_pub:main'
+            'cam_pub=mycobot_ros2_controll.camera_pub:main',
+            'detect_cube_hsv=mycobot_ros2_controll.detect_cube_hsv:main',
+            'detect_cube_server=mycobot_ros2_controll.detect_cube_server:main'
         ],
     },
 )

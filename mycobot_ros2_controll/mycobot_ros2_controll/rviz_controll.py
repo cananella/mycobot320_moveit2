@@ -54,7 +54,7 @@ class Controll_Subscriber(Node):
                 data_list.append(angles_to_digit)
 
 
-        #print(data_list)
+        # print(data_list)
         
         arm_data=[data_list[joint1],data_list[joint2],data_list[joint3],data_list[joint4],data_list[joint5],data_list[joint6]]
 
