@@ -9,11 +9,15 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(tf2 REQUIRED)
+
 
 add_executable(hello_moveit src/hello_moveit.cpp)
 add_executable(get_end_pose src/get_end_pose.cpp)
 add_executable(control_with_keyboard src/control_with_keyboard.cpp)
 add_executable(marker_test src/marker_test.cpp)
+add_executable(control_teleop src/control_teleop.cpp)
+
 
 
 target_include_directories(hello_moveit PUBLIC
@@ -36,6 +40,8 @@ ament_target_dependencies(
   control_with_keyboard
   "moveit_ros_planning_interface"
   "rclcpp"
+  "tf2"
+  "tf2_geometry_msgs"
 )
 
 ament_target_dependencies(
@@ -44,8 +50,14 @@ ament_target_dependencies(
   "rclcpp"
 )
 
+ament_target_dependencies(
+  control_teleop
+  "moveit_ros_planning_interface"
+  "rclcpp"
+)
 
-install(TARGETS hello_moveit get_end_pose control_with_keyboard marker_test
+
+install(TARGETS hello_moveit get_end_pose control_with_keyboard marker_test control_teleop
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

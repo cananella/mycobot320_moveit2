@@ -1,7 +1,17 @@
-
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <geometry_msgs/msg/pose.hpp>
 #include <rclcpp/rclcpp.hpp>
+
+void quaternionToRPY(const geometry_msgs::msg::Quaternion& quaternion){
+    tf2::Quaternion tf_quaternion;
+    tf2::fromMsg(quaternion, tf_quaternion);
+
+    double roll, pitch, yaw;
+    tf2::Matrix3x3(tf_quaternion).getRPY(roll, pitch, yaw);
+
+    std::cout << "Roll: " << roll << ", Pitch: " << pitch << ", Yaw: " << yaw << std::endl;
+}
 
 int main(int argc, char* argv[]) {
   // Initialize ROS
@@ -36,6 +46,12 @@ int main(int argc, char* argv[]) {
     current_pose.orientation.y,
     current_pose.orientation.z,
     current_pose.orientation.w);
+  
+
+  tf2::Quaternion quat_tf;
+  geometry_msgs::msg::Quaternion quat_msg = current_pose.orientation;
+  quaternionToRPY(quat_msg);
+
 
   // Shutdown ROS
   rclcpp::shutdown();
