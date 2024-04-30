@@ -41,12 +41,20 @@
         <joint name="joint6output_to_joint6" value="0"/>
     </group_state>
     <group_state name="ready" group="mycobot_arm">
-        <joint name="joint2_to_joint1" value="-0.785398"/>
-        <joint name="joint3_to_joint2" value="-0.453786"/>
-        <joint name="joint4_to_joint3" value="0.645772"/>
-        <joint name="joint5_to_joint4" value="-0.383972"/>
+        <joint name="joint2_to_joint1" value="0"/>
+        <joint name="joint3_to_joint2" value="-0.1396"/>
+        <joint name="joint4_to_joint3" value="0.1396"/>
+        <joint name="joint5_to_joint4" value="-1.2217"/>
         <joint name="joint6_to_joint5" value="-1.5707"/>
         <joint name="joint6output_to_joint6" value="0"/>
+    </group_state>
+    <group_state name="grip_cube_ready" group="mycobot_arm">
+        <joint name="joint2_to_joint1" value="-0.5236"/>
+        <joint name="joint3_to_joint2" value="0"/>
+        <joint name="joint4_to_joint3" value="-1.3614"/>
+        <joint name="joint5_to_joint4" value="0.0873"/>
+        <joint name="joint6_to_joint5" value="1.5707"/>
+        <joint name="joint6output_to_joint6" value="-0.5236"/>
     </group_state>
     <group_state name="open" group="hand">
         <joint name="right_inside_joint" value="-0.8"/>
@@ -59,6 +67,9 @@
     </group_state>
     <group_state name="1/4open" group="hand">
         <joint name="right_inside_joint" value="-0.2"/>
+    </group_state>
+    <group_state name="grip_cube" group="hand">
+        <joint name="right_inside_joint" value="-0.11"/>
     </group_state>
     <group_state name="close" group="hand">
         <joint name="right_inside_joint" value="0"/>
