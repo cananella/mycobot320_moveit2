@@ -68,67 +68,28 @@ change: default_value=moveit_config.move_group_capabilities["capabilities"],
  
 # [control whit code](https://moveit.picknik.ai/main/doc/tutorials/your_first_project/your_first_project.html)
 
+### mycobot grip test
+
+mycobot device permission assignment
+
 ```bash
-cd ~/[ros2 workspace dir]/src
-
-ros2 pkg create \
- --build-type ament_cmake \
- --dependencies moveit_ros_planning_interface rclcpp \
- --node-name hello_moveit hello_moveit
-
-gedit helo_moveit/src/hello_moveit.cpp
+sudo chmod +777 /dev/ttyACM0 
 ```
- 
-hello_moveit.cpp
-```c++ 
-#include <memory>
 
-#include <rclcpp/rclcpp.hpp>
-#include <moveit/move_group_interface/move_group_interface.h>
-
-int main(int argc, char * argv[])
-{
-  // Initialize ROS and create the Node
-  rclcpp::init(argc, argv);
-  auto const node = std::make_shared<rclcpp::Node>(
-    "hello_moveit",
-    rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true)
-  );
-
-  // Create a ROS logger
-  auto const logger = rclcpp::get_logger("hello_moveit");
-
-  // Create the MoveIt MoveGroup Interface
-  using moveit::planning_interface::MoveGroupInterface;
-  auto move_group_interface = MoveGroupInterface(node, "manipulator"); //<- need to input controller name
-  
-  // Set a target Pose
-  auto const target_pose = []{
-    geometry_msgs::msg::Pose msg;
-    msg.orientation.w = 1.0;               // <- need to change pose whthin mycobot can move
-    msg.position.x = 0.28;
-    msg.position.y = -0.2;
-    msg.position.z = 0.5;
-    return msg;
-  }();
-  move_group_interface.setPoseTarget(target_pose);
-  
-  // Create a plan to that target pose
-  auto const [success, plan] = [&move_group_interface]{
-    moveit::planning_interface::MoveGroupInterface::Plan msg;
-    auto const ok = static_cast<bool>(move_group_interface.plan(msg));
-    return std::make_pair(ok, msg);
-  }();
-  
-  // Execute the plan
-  if(success) {
-    move_group_interface.execute(plan);
-  } else {
-    RCLCPP_ERROR(logger, "Planning failed!");
-  }
-  
-  // Shutdown ROS
-  rclcpp::shutdown();
-  return 0;
-}
+launch mycobot controllor
 ```
+ros2 launch mycobot_ros2_controll rviz_controll.launch.py
+```
+
+run camera service node
+```
+ros2 run mycobot_ros2_controll detect_cube_server True
+```
+
+run grip test
+```
+ros2 run mycobot_ros2_cpp_cnt grip_test 
+```
+
+[![Video Label](http://img.youtube.com/vi/w1PpFvG0kvA/0.jpg)](https://youtu.be/w1PpFvG0kvA)
+
