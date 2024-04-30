@@ -2,6 +2,10 @@
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <geometry_msgs/msg/pose.hpp>
 #include <rclcpp/rclcpp.hpp>
+#include <vector>
+
+
+using namespace std;
 
 void quaternionToRPY(const geometry_msgs::msg::Quaternion& quaternion){
     tf2::Quaternion tf_quaternion;
@@ -51,6 +55,10 @@ int main(int argc, char* argv[]) {
   tf2::Quaternion quat_tf;
   geometry_msgs::msg::Quaternion quat_msg = current_pose.orientation;
   quaternionToRPY(quat_msg);
+
+  vector<double> end_rpy= move_group_interface.getCurrentRPY();
+
+  RCLCPP_INFO(node->get_logger(), "Current rpy pose: %f %f %f",end_rpy[0],end_rpy[1],end_rpy[2]);
 
 
   // Shutdown ROS

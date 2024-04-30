@@ -1,31 +1,34 @@
-orange:
-  high_h: 19
-  low_h:  0
-  high_s: 255
-  low_s:  150
-  high_v: 200
-  low_v:  71
-
 blue:
-  high_h: 133
-  low_h:  100
-  high_s: 255
-  low_s:  219
-  high_v: 148
-  low_v:  99
-
-green:
-  high_h: 96
-  low_h:  50
-  high_s: 255
-  low_s:  87
-  high_v: 191
-  low_v:  57
-
+    low_h:             61
+    high_h:            119
+    low_s:             168
+    high_s:            255
+    low_v:             120
+    high_v:            176
+orange:
+    low_h:             0
+    high_h:            17
+    low_s:             133
+    high_s:            230
+    low_v:             147
+    high_v:            230
 purple:
-  high_h: 147
-  low_h:  128
-  high_s: 160
-  low_s:  118
-  high_v: 120
-  low_v:  75
+    low_h:             123
+    high_h:            158
+    low_s:             82
+    high_s:            169
+    low_v:             92
+    high_v:            147
+green:
+    low_h:             54
+    high_h:            86
+    low_s:             127
+    high_s:            196
+    low_v:             72
+    high_v:            108
+
+
+##point of (x = -0.257 y = 0.188);
+robot_focus:
+  x:  288
+  y:  288

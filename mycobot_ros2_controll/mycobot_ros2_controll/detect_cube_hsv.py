@@ -32,8 +32,9 @@ class ColorDetectionNode(Node):
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.height)
 
 
-        self.armforcesX = 345
-        self.armforcesY = 93
+
+        self.armforcesX = self.yaml_data.get('robot_focus').get('x')
+        self.armforcesY = self.yaml_data.get('robot_focus').get('y')
         self.detect_data=[]
         blue_high_h =self.yaml_data.get('blue').get('high_h')
         blue_low_h  =self.yaml_data.get('blue').get('low_h')
@@ -113,6 +114,7 @@ class ColorDetectionNode(Node):
         self.detect_data.clear()
         contourarea_threshold=100
 
+
         for idx,contour_data in enumerate(contours_list):
             for contour in contour_data:
                 epsilon = 0.05 * cv2.arcLength(contour, True)
@@ -153,13 +155,13 @@ class ColorDetectionNode(Node):
     def imgShow(self):
         while True:
             frame=self.frame
-            for color,cX,cY,_,_,_ in self.detect_data:
+            for color,cX,cY,_,_,angle in self.detect_data:
                 # 중심점에 점 그리기
                 cv2.circle(frame, (cX, cY), 5, (0, 0, 255), -1)
                 # 중심점 좌표 출력
                 transformX=cX-self.armforcesX
                 transformY=self.armforcesY-cY
-                cv2.putText(frame, f'{color} ({transformX}, {transformY})', (cX - 50, cY - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+                cv2.putText(frame, f'{color} ({transformX}, {transformY})  theta: {angle}', (cX - 50, cY - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 
             frame=cv2.line(frame,(self.armforcesX,0),(self.armforcesX,self.height),(0,255,0),1)
             frame=cv2.line(frame,(0,self.armforcesY),(self.width,self.armforcesY),(0,255,0),1)

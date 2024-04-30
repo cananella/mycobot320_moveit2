@@ -35,8 +35,8 @@ class ColorDetectionService(Node):
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.height)
 
 
-        self.armforcesX = 345
-        self.armforcesY = 93
+        self.armforcesX = self.yaml_data.get('robot_focus').get('x')
+        self.armforcesY = self.yaml_data.get('robot_focus').get('y')
         self.detect_data=[]
         blue_high_h =self.yaml_data.get('blue').get('high_h')
         blue_low_h  =self.yaml_data.get('blue').get('low_h')

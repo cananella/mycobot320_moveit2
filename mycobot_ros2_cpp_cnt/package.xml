@@ -13,8 +13,10 @@
   <depend>visualization_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>vision_msgs</depend>
+  <depend>sensor_msgs</depend>
   <depend>rclcpp</depend>
   <depend>mycobot_interfaces</depend>
+  <depend>mycobot_ros2_controll</depend>
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

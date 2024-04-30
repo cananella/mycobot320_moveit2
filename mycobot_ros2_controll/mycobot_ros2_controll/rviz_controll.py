@@ -58,7 +58,7 @@ class Controll_Subscriber(Node):
         
         arm_data=[data_list[joint1],data_list[joint2],data_list[joint3],data_list[joint4],data_list[joint5],data_list[joint6]]
 
-        self.grippernextVelue=int(-data_list[gripperjoint]/46*700+1300)
+        self.grippernextVelue=int(-data_list[gripperjoint]/46*800+2048)
         
         # print('joint angles: {}'.format(arm_data))
         # print('gripper angles: {} <= {}'.format(self.grippernextVelue, self.grippercurrVelue))

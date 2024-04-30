@@ -28,6 +28,8 @@ int main(int argc, char* argv[]) {
     // Create the MoveIt MoveGroup Interface
     using moveit::planning_interface::MoveGroupInterface;
     auto move_group_interface = MoveGroupInterface(node, "mycobot_arm");
+    // move_group_interface.setPlannerId("PRM");
+    move_group_interface.setPlanningTime(10.0);
 
     int choice;
     geometry_msgs::msg::Pose target_pose;

@@ -1,7 +1,11 @@
 #include <memory>
-
+#include <vector>
+#include <iostream>
 #include <rclcpp/rclcpp.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
+
+
+using namespace std;
 
 int main(int argc, char * argv[])
 {
@@ -21,8 +25,11 @@ int main(int argc, char * argv[])
   using moveit::planning_interface::MoveGroupInterface;
   auto move_group_interface = MoveGroupInterface(node, "mycobot_arm");
   auto hand_move_group_interface = MoveGroupInterface(node, "hand");
+
   
 
+
+  ////// set pose whit position and orientation
   // Set a target Pose
   // auto const target_pose = []{
   //   geometry_msgs::msg::Pose msg;
@@ -35,11 +42,9 @@ int main(int argc, char * argv[])
   //   msg.position.z = 0.3;
   //   return msg;
   // }();
-  // move_group_interface.setPoseTarget(target_pose);
-  // auto target=move_group_interface.getNamedTargetValues("home");
-  // move_group_interface.setNamedTarget("ready");
-  hand_move_group_interface.setNamedTarget("open");
+
   // Create a plan to that target pose
+  // move_group_interface.setPoseTarget(target_pose);
   // auto const [success, plan] = [&move_group_interface]{
   //   moveit::planning_interface::MoveGroupInterface::Plan msg;
   //   auto const ok = static_cast<bool>(move_group_interface.plan(msg));
@@ -52,19 +57,32 @@ int main(int argc, char * argv[])
   //   RCLCPP_ERROR(logger, "Planning failed!");
   // }
 
-  auto const [success, plan] = [&hand_move_group_interface]{
+
+  ////// pose control with setting name on srdf
+  
+  // auto target=move_group_interface.getNamedTargetValues("home");
+  move_group_interface.setNamedTarget("ready");
+  // hand_move_group_interface.setNamedTarget("open");
+
+  auto const [success, plan] = [&move_group_interface]{
     moveit::planning_interface::MoveGroupInterface::Plan msg;
-    auto const ok = static_cast<bool>(hand_move_group_interface.plan(msg));
+    auto const ok = static_cast<bool>(move_group_interface.plan(msg));
     return std::make_pair(ok, msg);
   }();
 
   // Execute the plan
   if(success) {
-    hand_move_group_interface.execute(plan);
+    move_group_interface.execute(plan);
   } else {
     RCLCPP_ERROR(logger, "Planning failed!");
   }
-  // Shutdown ROS
-  rclcpp::shutdown();
-  return 0;
+
+
+  // vector<double> pose_rpy=move_group_interface.getCurrentRPY();
+  // for(auto& elem:pose_rpy) cout<<elem<<"  ";
+
+
+  // // Shutdown ROS
+  // rclcpp::shutdown();
+  // return 0;
 }

@@ -32,12 +32,12 @@ def generate_launch_description():
     )
     res.append(rviz_control_node)
 
-    cam_node = Node(
-        package="mycobot_ros2_controll",
-        executable="cam_pub",
-        name="cam_pub",
-        output="screen"
-    )
-    res.append(cam_node)
+    # cam_node = Node(
+    #     package="mycobot_ros2_controll",
+    #     executable="cam_pub",
+    #     name="cam_pub",
+    #     output="screen"
+    # )
+    # res.append(cam_node)
 
     return LaunchDescription(res)
