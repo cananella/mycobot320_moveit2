@@ -92,4 +92,6 @@ ros2 run mycobot_ros2_cpp_cnt grip_test
 ```
 
 [![Video Label](http://img.youtube.com/vi/w1PpFvG0kvA/0.jpg)](https://youtu.be/w1PpFvG0kvA)
+[![Video Label](http://img.youtube.com/vi/8nvSbYxliNI/0.jpg)](https://youtu.be/8nvSbYxliNI)
+
 
